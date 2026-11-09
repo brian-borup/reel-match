@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Reel Match</title>
+  <meta name="description" content="Match each movie to its director, its star or its release year.">
+  <meta name="theme-color" content="#1a1f28">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Reel Match">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="marquee">
+      <h1>Reel <span>Match</span></h1>
+      <p>Five reels. Pair every film with its director, its star or its release year.</p>
+    </header>
+  
+    <form class="controls" id="controls">
+      <fieldset>
+        <legend>Match by</legend>
+        <div class="seg">
+          <label><input type="radio" name="cat" id="cat-mixed" value="mixed" checked><span>Mixed</span></label>
+          <label><input type="radio" name="cat" id="cat-director" value="director"><span>Directors</span></label>
+          <label><input type="radio" name="cat" id="cat-actor" value="actor"><span>Stars</span></label>
+          <label><input type="radio" name="cat" id="cat-year" value="year"><span>Years</span></label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Difficulty</legend>
+        <div class="seg">
+          <label><input type="radio" name="diff" id="diff-matinee" value="matinee"><span>Matinee</span></label>
+          <label><input type="radio" name="diff" id="diff-feature" value="feature" checked><span>Feature</span></label>
+          <label><input type="radio" name="diff" id="diff-cut" value="cut"><span>Director's Cut</span></label>
+        </div>
+      </fieldset>
+      <button class="btn" type="submit" id="new-game">New game</button>
+    </form>
+  
+    <section class="hud" aria-label="Scoreboard">
+      <div><p class="label">Reel</p><b id="h-reel">1/5</b><div class="reel-dots" id="h-dots"></div></div>
+      <div><p class="label">Score</p><b id="h-score">0</b></div>
+      <div><p class="label">Streak</p><b id="h-streak">0</b></div>
+      <div><p class="label">Misses</p><b id="h-miss">0</b></div>
+      <div><p class="label">Best</p><b id="h-best">–</b></div>
+    </section>
+  
+    <main class="board" id="board"></main>
+  </div>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
